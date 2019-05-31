@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<bodyy>
+    <center>
+        <div class="container" style="background-color:antiquewhite">
+            <div style="margin-top:100px"><h1>수정하기</h1></div>
+            <form action="{%url 'update' post.id%}" method="POST">
+                {%csrf_token%}
+            
+                <h4>글 제목</h4>
+                <input type="text" name="Name" value="{{post.Name}}">
+                <h4>글 내용</h4>
+                <textarea type="content" name="Textarea" cols="30" rows="10">{{post.Textarea}}</textarea>
+                <br>
+                <input type="submit" class="btn btn-dark" value="글 수정">
+
+            </form>
+
+
+
+
+        </div>
+    </center>
+
+
+
+</bodyy>
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe');
+    body{font-family: 'ZCOOL KuaiLe', cursive;
+    font-size:33px;
+    background-color:saddlebrown;}
+</style>
+{%endblock%}

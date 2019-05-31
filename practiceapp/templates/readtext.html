@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+<center>
+<div style="margin-top:100px;background-color:antiquewhite">
+    {%if post.pic%}
+    <img src="{{post.pic.url}}"> <br>
+    {%endif%}
+    <hr>
+    글쓴이 : {{post.user}}
+    <p><strong>-글 제목-</strong><br><br> {{post.Name}}</p><hr>
+    <p><strong>-글 내용-</strong><br><br>
+    {{post.Textarea}}</p>
+    <hr>
+    <br>
+    <a href="/"><button class="btn btn-dark">돌아가기</button></a>
+    {%if request.user == post.user or request.user.is_staff %}
+    <a href="{%url 'update' post.id%}"><button class="btn btn-dark">수정하기</button></a>
+    <a href="{%url 'delete' post.id%}"><button class="btn btn-dark">삭제하기</button></a><br>
+    {%endif%}
+    
+    
+</div>
+</center>
+
+</body>
+<style>
+     @import url('https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe');
+    body{font-family: 'ZCOOL KuaiLe', cursive;
+    font-size:33px;
+    background-color:saddlebrown;}
+</style>
+{%endblock%}

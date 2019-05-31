@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+    <center>
+        <div style="background-color:antiquewhite">
+        <div style="margin-top:100px">
+            <h1>글쓰기 페이지</h1>
+        </div>  
+        <form action="{%url 'createplace'%}" method="POST" enctype="multipart/form-data">
+            {%csrf_token%}
+            <p>글 제목</p>
+            <input type="text" name="Name" placeholder="제목쓰세용">
+            <p>글 내용</p>
+            <textarea name="Textarea" cols="30" rows="10" placeholder="내용쓰세용"></textarea><br><br>
+            
+            
+            <p>카테고리</p>
+            <select name="category">
+                <option value="공지">공지</option>
+                <option value="자유">자유</option>
+                <option value="질문">질문</option>
+            </select>
+            <br>
+            <input type="file" name="image"><br>
+            <input type="submit" value="글써져라얍">
+
+        </form>
+    </div>
+    </center>
+</body>
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe');
+    body{font-family: 'ZCOOL KuaiLe', cursive;
+    font-size:33px;
+    background-color:saddlebrown;}
+</style>
+{%endblock%}

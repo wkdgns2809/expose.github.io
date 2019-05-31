@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+<h1>로그인</h1>
+<form action="{%url 'login'%}" method="post" style="background-color: antiquewhite">
+    {%csrf_token%}
+    Username:
+    <br>
+    <input name="id" type="text">
+    <br>
+    Password:
+    <br>
+    <input name="password" type="password">
+    <br>
+    <br>
+    <input class="btn btn-primary" type="submit" value="로그인"><br><hr>
+    {% if error %}
+    {{ error }}
+    <br>
+    <br>
+    {% endif %}
+</form>
+</body>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe');
+    body{font-family: 'ZCOOL KuaiLe', cursive;
+font-size:33px;
+background-color:saddlebrown;}
+</style>
+{%endblock%}

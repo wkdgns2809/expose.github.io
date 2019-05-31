@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>회원가입</h1>
+<form action="{%url 'signup'%}" method="POST" style="background-color: antiquewhite">
+    {%csrf_token%}
+    <h2>ID</h2><br>
+    <input type="text" name="id"><br>
+    <h2>닉네임</h2><br>
+    <input type="text" name="nickname"><br>
+    <h2>지역</h2><br>
+    <input type="text" name="region"><br>
+    <h2>Password</h2><br>
+    <input type="text" name="Password"><br>
+    <h2>Password Confirm</h2><br>
+    <input type="text" name="PasswordConfirm"><br>
+    <input type="submit" value="회원가입">
+</form>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe');
+    body{font-family: 'ZCOOL KuaiLe', cursive;
+font-size:33px;
+background-color:saddlebrown;}
+</style>
+
+{%endblock%}
